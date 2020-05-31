@@ -47,3 +47,4 @@ jobs:
     # Deploy Base-React-App to surge
     - name: Run surge
       run: surge ./build Base-React-App-MNA.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      

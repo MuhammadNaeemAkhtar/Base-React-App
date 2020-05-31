@@ -21,6 +21,15 @@ npm start
 Adding the project on GitHub using the command line:
 https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
 
+pwd
+git init
+git add .  To stage all the files
+git commit -m "Commit message"
+git remote add origin RemoteRepositoryURL
+git remote -v
+git push origin master
+
+
 Created GitHub Actions Workflow of deploying the React App to Surge.
 
 Learning React from the following tutorial:

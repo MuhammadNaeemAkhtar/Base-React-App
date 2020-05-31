@@ -20,18 +20,30 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
+    # Install Node.js
     - name: Install Node.js
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12
-    - name: Prepare for yarn installation
-      run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    - name: Install yarn
-      run: sudo apt update && sudo apt install yarn
+    
+    # Install Yarn
+    #- name: Prepare for yarn installation
+    #  run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    #- name: Install yarn
+    #  run: sudo apt update && sudo apt install yarn
+    
+    - uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install #will run yarn install command
+
+    # To build the React app using yarn
     - name: Build React App
       run: yarn build
+
+    # Install surge
     - name: Install Surge
       run: npm install -g surge
+    
+    # Deploy Base-React-App to surge
     - name: Run surge
-      run: surge ./build MuhammadNaeemAkhtar_Base_React_App.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build Base-React-App-MNA.surge.sh --token ${{ secrets.SURGE_TOKEN }}

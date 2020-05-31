@@ -1,3 +1,42 @@
+# Learning React
+Steps to follow to create, build and deploy the first react app
+
+Create React Project using Create React App
+https://create-react-app.dev/docs/getting-started
+
+https://github.com/facebook/create-react-app
+
+Use the following command:
+
+npx create-react-app react-base-app
+
+Open created directory/project in VS Code
+
+Give following commands to view app in browser:
+
+cd react-base-app
+
+npm start
+
+Adding the project on GitHub using the command line:
+https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
+
+Created GitHub Actions Workflow of deploying the React App to Surge.
+
+Learning React from the following tutorial:
+https://daveceddia.com/react-tutorial/
+
+Note: Start writing React code in App.js and other component files
+
+Reported the issue on:
+https://github.com/panacloud/Base-React-App/issues/8
+
+//********************************************
+
+The Following documentation is auto generated
+
+//********************************************
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -44,7 +44,7 @@ jobs:
     - name: Install Surge
       run: npm install -g surge
     
-    # Deploy Base-React-App to surge
+    # Deploy Base-React-App to surge previous Base-React-App-MNA.surge.sh
     - name: Run surge
-      run: surge ./build Base-React-App-MNA.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      run: surge ./build http://elearning-website.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
       

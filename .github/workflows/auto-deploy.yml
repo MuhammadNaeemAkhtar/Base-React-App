@@ -26,22 +26,17 @@ jobs:
       with:
         node-version: 12
     
-    # Install Yarn
-    #- name: Prepare for yarn installation
-    #  run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    #- name: Install yarn
-    #  run: sudo apt update && sudo apt install yarn
-    
+    # Install yarn
     - uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: install #will run yarn install command
-
-    # To build the React app using yarn
+        cmd: install
+        
+    # To build the react app using yarn
     - name: Build React App
       run: yarn build
-
+    
     # Install surge
-    - name: Install Surge
+    - name: Install surge
       run: npm install -g surge
     
     # Deploy Base-React-App to surge previous Base-React-App-MNA.surge.sh
